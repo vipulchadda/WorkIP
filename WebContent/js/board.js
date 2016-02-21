@@ -19,6 +19,7 @@ $(function() {
       connectWith: ".notes-list",
       cursor: "pointer",
       dropOnEmpty: true,
+      cancel:".note > *",
       receive: function(event, ui){
     	  var noteState = $(event.target).attr("data-note-state");
     	  var noteId = $(event.toElement).closest(".note").attr("data-note-id");
@@ -30,7 +31,7 @@ $(function() {
     		  success: function(){}
     		});
       }
-    }).disableSelection();
+    });
     
     
     $("#newNoteModal").on("show.bs.modal", function(event){
