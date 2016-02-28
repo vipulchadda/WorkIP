@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">Estimates:</label>
-            <input type="text" class="form-control" name="estimates">
+            <input type="number" class="form-control" name="estimates">
           </div>
           <div class="form-group">
           	<label for="currentState" class="control-label">Current State:</label>
