@@ -2,6 +2,9 @@
 .new-note {
 	display: none;
 }
+.new-note button {
+	margin-top: -5px;
+}
 .title:hover .new-note {
 	display: inline;
 }
