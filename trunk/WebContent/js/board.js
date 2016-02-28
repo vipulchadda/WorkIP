@@ -8,7 +8,7 @@ var getDataObject = function(serializedArray) {
 	return object;
 };
 var getRandomDegree = function() {
-	return Math.round((Math.random() * 4 - 2) * 10) / 10;
+	return Math.round((Math.random() * 3 - 1.5) * 10) / 10;
 }
 $(function() {
 	var min_height = null;
