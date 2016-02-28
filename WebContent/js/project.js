@@ -8,6 +8,9 @@ $(function() {
 		}
 		return object;
 	};
+	$("#newProjectModal").on("shown.bs.modal", function(event){
+    	$(this).find("input:first").focus();
+    })
 	$("#open-project").click(function(){
 		var project = $("#project").val();
 		if (project) {
