@@ -54,7 +54,7 @@ public class ProjectService {
 			final Iterator<BsonDocument> projectsItr = collection.find().iterator();
 			while (projectsItr.hasNext()) {
 				final Project project = new Project();
-				getProjectFromDocument(project, projectsItr.next(), true);
+				getProjectFromDocument(project, projectsItr.next(), false);
 				projects.add(project);
 			}
 		} finally {

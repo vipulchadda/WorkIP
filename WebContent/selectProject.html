@@ -1,0 +1,18 @@
+<div class="container container-table">
+	<div class="row vertical-center-row">
+	    <div class="col-lg-4 col-lg-offset-4 well">
+	    	<p>Select a Project:
+	    	<button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#newProjectModal">New Project &nbsp;
+	 					<span class="glyphicon glyphicon-edit"></span>
+	 				</button></p>
+	    	<div class="input-group">
+			    <select class="form-control" ng-model="projectId">
+		    		<option ng-repeat="project in projects" value="{{project.name}}">{{project.name}}</option>
+			    </select>
+			    <span class="input-group-btn">
+			    	<button class="btn btn-primary" ng-click="openProject(projectId)">Go &raquo;</button>
+			    </span>
+		    </div>
+		</div>
+	</div>
+</div>

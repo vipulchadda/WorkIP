@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><c:out value="${note.name}"></c:out></title>
+    <title><c:out value="${note.project.name}"></c:out> | Work I P</title>
 
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
