@@ -1,0 +1,44 @@
+<div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+        	<div class="well">
+        		<h3>{{note.name}} 
+       				<button class="btn btn-primary btn-sm pull-right"  data-toggle="modal" data-target="#editNoteModal">Edit &nbsp;
+       					<span class="glyphicon glyphicon-edit"></span>
+       				</button>
+        		</h3>
+        		<hr>
+        		<dl class="dl-horizontal">
+				  <dt>Description</dt><dd>{{note.description }}</dd>
+				  <dt>Estimates</dt><dd>{{note.estimates }}</dd>
+				  <dt>Version</dt><dd>{{note.version.name}} </dd>
+				  <dt>Assigned To</dt><dd>{{note.assignedTo }}</dd>
+				  <dt>Created By</dt><dd>{{note.createdBy }}</dd>
+				  <dt>Created Date</dt><dd>{{note.createdDate }}</dd>
+				  <dt>Modified Date</dt><dd>{{note.modifiedDate }}</dd>
+				  <dt>Current State</dt><dd>{{note.currentState }}</dd>
+				  <dt>Sprint</dt><dd>{{note.sprint.name}}</dd>
+				</dl>
+        	</div>
+	        
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+        		<div class="list-group">
+        			<div class="list-group-item"><h4>Comments</h4></div>
+        			<div class="list-group-item" ng-repeat="comment in note.comments">{{comment}}}</div>
+        			<div class="list-group-item">
+        				<form class="add-comment-form">
+        					<div class="form-group">
+	        				<textarea class="form-control" name="comments"></textarea>
+	        				<input type="hidden" name="id" value="{{note.id}}">
+	        				</div>
+	        				<button type="submit" class="btn btn-primary">Comment</button>
+        				</form>
+        			</div>
+        		</div>
+	        
+        </div>
+      </div>
+    </div>

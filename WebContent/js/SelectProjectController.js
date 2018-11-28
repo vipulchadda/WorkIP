@@ -1,8 +1,11 @@
 (function(){
 	var workIp = angular.module("workInProgress");
 	
-	var SelectProjectController = function($scope, $http, $location) {
+	var SelectProjectController = function($scope, $http, $location, $rootScope) {
 
+		$rootScope.showChangeProject = false;
+		$rootScope.projectName = "";
+		
 		var onProjectComplete = function(response) {
 			$scope.projects = response.data;
 			if($scope.projects && $scope.projects.length) {
@@ -11,6 +14,7 @@
 		}
 		
 		$scope.openProject = function() {
+			
 			$location.path("/board/" + $scope.projectId);
 		}
 

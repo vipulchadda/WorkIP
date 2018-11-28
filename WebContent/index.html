@@ -11,14 +11,18 @@
 <script src="./js/workip.js"></script>
 <script src="./js/SelectProjectController.js"></script>
 <script src="./js/BoardController.js"></script>
+<script src="./js/NoteDetailsController.js"></script>
+<script src="./js/ClickLinkDirective.js"></script>
 <title>Work IP</title>
 </head>
 <body ng-controler="WorkIPController">
 	<nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <div class="navbar-brand">Work IP</div>
+          <div class="navbar-brand" ng-hide="projectName">Work IP</div>
+          <a class="navbar-brand" ng-show="projectName" click-link="/board/{{projectName}}"> Work IP | {{projectName}}</a>
         </div>
+        <a class="navbar-btn btn btn-primary btn-xs pull-right" href="/" ng-show="showChangeProject">Change Project</a>
       </div>
     </nav>
     <ng-view></ng-view>

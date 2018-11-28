@@ -1,1 +1,58 @@
-{{projectName}}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="title">
+				<h2>To Do 
+					<span class="new-note">
+						<button class="btn btn-primary btn-sm" data-toggle="modal"
+							data-target="#newNoteModal" data-note-type="TO_DO">
+							New Note &nbsp; <span class="glyphicon glyphicon-edit"></span>
+						</button>
+					</span>
+				</h2>
+			</div>
+			<ul class="notes-list to-do-notes list-unstyled"
+				data-note-state="TO_DO">
+				<li ng-repeat="note in project.toDoNotes">
+					<ng-include src="'note.html'"></ng-include>
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-4">
+			<div class="title">
+				<h2>Work IP 
+					<span class="new-note">
+						<button class="btn btn-primary btn-sm" data-toggle="modal"
+							data-target="#newNoteModal" data-note-type="WIP">
+							New Note &nbsp; <span class="glyphicon glyphicon-edit"></span>
+						</button>
+					</span>
+				</h2>
+			</div>
+			<ul class="notes-list wip-notes list-unstyled" data-note-state="WIP">
+				<li ng-repeat="note in project.wipNotes">
+					<ng-include src="'note.html'"></ng-include>
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-4">
+			<div class="title">
+				<h2>Done 
+					<span class="new-note">
+						<button class="btn btn-primary btn-sm" data-toggle="modal"
+							data-target="#newNoteModal" data-note-type="DONE">
+							New Note &nbsp; <span class="glyphicon glyphicon-edit"></span>
+						</button>
+					</span>
+				</h2>
+			</div>
+			<ul class="notes-list done-notes list-unstyled"
+				data-note-state="DONE">
+				<li ng-repeat="note in project.doneNotes">
+					<ng-include src="'note.html'"></ng-include>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

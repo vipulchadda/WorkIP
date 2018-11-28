@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import work.ip.model.Note;
 import work.ip.model.NoteState;
 import work.ip.model.Project;
@@ -29,6 +31,9 @@ public class NoteServlet extends HttpServlet {
 
 		String responseStr = "";
 		switch (ServletOperation.get(pathInfo)) {
+		case GET:
+			responseStr = getNote(request);
+			break;
 		case ADD:
 			responseStr = addNote(request);
 			break;
@@ -45,7 +50,19 @@ public class NoteServlet extends HttpServlet {
 		response.getOutputStream().write(responseStr.getBytes());
 
 	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doPost(request, response);
+	}
 
+	private String getNote(HttpServletRequest request) {
+		final String noteId = request.getParameter("id");
+		final Gson gson = new Gson();
+		final Note note = NoteService.getNoteFromId(noteId);
+		return gson.toJson(note);
+	}
+	
 	private String addNote(HttpServletRequest request) {
 		final Map<String, String[]> parameters = request.getParameterMap();
 		final Note note = new Note();

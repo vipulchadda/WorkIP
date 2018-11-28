@@ -1,0 +1,7 @@
+<div class="note" data-note-id="{{note.id }}" ng-style="getNoteStyle()">
+  <button type="button" class="close delete" aria-label="Delete"><span aria-hidden="true">x</span></button>
+  <h4>{{note.name}}</h4>
+  <p class="note-description">{{note.description }}</p>
+  <p><a class="view-details" click-link="/note-details/{{note.id}}" role="button">View details &raquo;</a></p>
+  <p class="estimates">{{note.estimates}}</p>
+</div>

@@ -11,6 +11,10 @@
 				templateUrl: "board.html",
 				controller: "BoardController"
 			})
+			.when("/note-details/:noteId", {
+				templateUrl: "note-details.html",
+				controller: "NoteDetailsController"
+			})
 			.otherwise({redirectTo:"/selectProject"});
 	});
 	

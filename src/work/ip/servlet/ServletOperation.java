@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum ServletOperation {
-	ADD("/add"), DELETE("/delete"), UPDATE("/update");
+	GET("/get"), ADD("/add"), DELETE("/delete"), UPDATE("/update");
 
 	private static final Map<String, ServletOperation> lookup = new HashMap<String, ServletOperation>();
 
